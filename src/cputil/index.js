@@ -124,7 +124,7 @@ module.exports = {
               ])
               .return(fileData);
           })
-          .tap(fileBuffer => {
+          .then(fileBuffer => {
             const fileData = fileBuffer.toString();
 
             console.log('RESULT', fileData);
