@@ -1,0 +1,28 @@
+{
+  "name": "node-cputil",
+  "version": "0.0.1",
+  "description": "Node js wrapper for Star's cputil",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "eslint": "node_modules/eslint/bin/eslint.js --config './.eslintrc.js' 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officert/node-cputil.git"
+  },
+  "keywords": [
+    "node",
+    "star",
+    "cputil"
+  ],
+  "author": "Tim Officer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/officert/node-cputil/issues"
+  },
+  "homepage": "https://github.com/officert/node-cputil#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0"
+  }
+}
