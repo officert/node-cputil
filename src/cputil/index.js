@@ -99,10 +99,10 @@ function checkIfDirAlreadyExists(path) {
   return new Promise(resolve => {
     fs.access(path, error => {
       if (error) {
-        return resolve(true);
+        return resolve(false);
       }
 
-      return resolve(false);
+      return resolve(true);
     })
   });
 }
