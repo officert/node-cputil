@@ -121,8 +121,8 @@ module.exports = {
     const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.txt')}`);
 
     return Promise.all([
-        makeDir('./tmp'),
-        makeDir('./output')
+        makeDir(path.join(__dirname, './tmp')),
+        makeDir(path.join(__dirname, './output'))
       ])
       .then(() => {
         writeFile(tmpFilePath, starPrintMarkUp)
