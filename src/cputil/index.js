@@ -141,12 +141,12 @@ module.exports = {
                 deleteFile(tmpFilePath),
                 deleteFile(outputFilePath)
               ])
-              .return(fileData);
+              .then(() => {
+                return fileData;
+              });
           })
           .then(fileBuffer => {
             const fileData = fileBuffer.toString();
-
-            console.log('RESULT', fileData);
 
             return fileData;
           });
