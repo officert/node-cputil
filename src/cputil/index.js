@@ -10,20 +10,38 @@ const CPUTIL_PATH = path.join(__dirname, './bin/macos/cputil');
 function readFile(filename) {
   if (!filename) return Promise.reject(new Error('filename'));
 
-  return Promise.fromCallback(callback => fs.readFile(filename, callback));
+  return new Promise((resolve, reject) => {
+    fs.readFile(filename, (err, result) => {
+      if (err) return reject(err);
+
+      return resolve(result);
+    });
+  });
 }
 
 function writeFile(filename, data) {
   if (!filename) return Promise.reject(new Error('filename'));
   if (!data) return Promise.reject(new Error('data'));
 
-  return Promise.fromCallback(callback => fs.writeFile(filename, data, callback));
+  return new Promise((resolve, reject) => {
+    fs.writeFile(filename, data, (err, result) => {
+      if (err) return reject(err);
+
+      return resolve(result);
+    });
+  });
 }
 
 function deleteFile(filename) {
   if (!filename) return Promise.reject(new Error('filename'));
 
-  return Promise.fromCallback(callback => fs.unlink(filename, callback));
+  return new Promise((resolve, reject) => {
+    fs.unlink(filename, (err, result) => {
+      if (err) return reject(err);
+
+      return resolve(result);
+    });
+  });
 }
 
 function execCputil(command, args) {
