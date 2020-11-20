@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-
 const path = require('path');
 const child_process = require('child_process');
 
@@ -77,6 +76,18 @@ function execCputil(command, args) {
   });
 }
 
+function makeDir(path) {
+  return new Promise((resolve, reject) => {
+    fs.mkdir(path, err => {
+      if (err) {
+        return reject(err);
+      }
+
+      return resolve(null);
+    })
+  });
+}
+
 module.exports = {
   /**
    * @desc takes a string of Star Prnt MarkUp and converts it to a format that can be handed to Star printers for printing.
@@ -90,7 +101,13 @@ module.exports = {
     const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`);
     const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.txt')}`);
 
-    return writeFile(tmpFilePath, starPrintMarkUp)
+    return Promise.all([
+        makeDir('./tmp'),
+        makeDir('./output')
+      ])
+      .then(() => {
+        writeFile(tmpFilePath, starPrintMarkUp)
+      })
       .then(() => {
         return execCputil('decode', [
             'application/vnd.star.starprnt',
