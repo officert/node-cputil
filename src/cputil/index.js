@@ -77,6 +77,13 @@ function execCputil(command, args) {
 }
 
 function makeDir(path) {
+  return checkIfDirAlreadyExists(path)
+    .then(exists => {
+      if (!exists) return createDir(path);
+    });
+}
+
+function createDir(path) {
   return new Promise((resolve, reject) => {
     fs.mkdir(path, err => {
       if (err) {
@@ -84,6 +91,18 @@ function makeDir(path) {
       }
 
       return resolve(null);
+    })
+  });
+}
+
+function checkIfDirAlreadyExists(path) {
+  return new Promise(resolve => {
+    fs.access(path, error => {
+      if (error) {
+        return resolve(true);
+      }
+
+      return resolve(false);
     })
   });
 }
