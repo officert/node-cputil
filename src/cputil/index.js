@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const child_process = require('child_process');
 
-const CPUTIL_PATH = path.join(__dirname, './bin/macos/cputil');
+const CPUTIL_PATH = process.platform === 'darwin' ? path.join(__dirname, './bin/macos/cputil') : path.join(__dirname, './bin/linux/cputil');
 
 function readFile(filename) {
   if (!filename) return Promise.reject(new Error('filename'));
@@ -66,8 +66,6 @@ function execCputil(command, args) {
       }
 
       if (stderr) {
-        console.log('stderr', stderr);
-
         return resolve(stderr);
       }
 
