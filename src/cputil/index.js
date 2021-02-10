@@ -10,7 +10,7 @@ function readFile(filename) {
   if (!filename) return Promise.reject(new Error('filename'));
 
   return new Promise((resolve, reject) => {
-    fs.readFile(filename, (err, result) => {
+    fs.readFile(filename, 'utf8', (err, result) => {
       if (err) return reject(err);
 
       return resolve(result);
@@ -45,8 +45,6 @@ function deleteFile(filename) {
 
 function execCputil(command, args) {
   args = !args || !args.length ? [] : args;
-
-  args = args.map(arg => `"${arg}"`);
 
   const cputilArgs = [
     command,
@@ -108,45 +106,46 @@ function checkIfDirAlreadyExists(path) {
 module.exports = {
   /**
    * @desc takes a string of Star Prnt MarkUp and converts it to a format that can be handed to Star printers for printing.
-   * @param {String} starPrintMarkUp
+   * @param {String} text
    * @returns {String}
    */
-  convertStarPrintMarkUp(starPrintMarkUp) {
-    if (!starPrintMarkUp) return Promise.reject(new Error('starPrintMarkUp'));
+  convertStarPrintMarkUp(text, outputFormat, width) {
+    if (!text) return Promise.reject(new Error('text'));
 
     const fileName = 'starMarkUp.stm';
     const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`);
-    const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.txt')}`);
+    const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`);
+
+    let cmd = '';
+
+    if (width) cmd = width;
+
+    cmd += ' scale-to-fit decode';
 
     return Promise.all([
         makeDir(path.join(__dirname, './tmp')),
         makeDir(path.join(__dirname, './output'))
       ])
       .then(() => {
-        writeFile(tmpFilePath, starPrintMarkUp)
+        writeFile(tmpFilePath, text)
       })
       .then(() => {
-        return execCputil('decode', [
-            'application/vnd.star.starprnt',
+        return execCputil(cmd, [
+            outputFormat,
             tmpFilePath,
             outputFilePath
           ])
           .then(() => {
             return readFile(outputFilePath);
           })
-          .then(fileData => {
+          .then(fileBuffer => {
             return Promise.all([
                 deleteFile(tmpFilePath),
                 deleteFile(outputFilePath)
               ])
               .then(() => {
-                return fileData;
+                return fileBuffer.toString('utf8');
               });
-          })
-          .then(fileBuffer => {
-            const fileData = fileBuffer.toString();
-
-            return fileData;
           });
       });
   }
