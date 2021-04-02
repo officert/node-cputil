@@ -112,7 +112,7 @@ module.exports = {
   convertStarPrintMarkUp(text, outputFormat, width) {
     if (!text) return Promise.reject(new Error('text'));
 
-    const fileName = 'starMarkUp.stm';
+    const fileName = `starMarkUp-${new Date().getTime()}.stm`;
     const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`);
     const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`);
 
