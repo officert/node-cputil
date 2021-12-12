@@ -1,9 +1,10 @@
 {
   "name": "node-cputil",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "Node js wrapper for Star's cputil",
   "main": "index.js",
   "scripts": {
+    "build": "npm run tsc",
     "test": "test",
     "eslint": "node_modules/eslint/bin/eslint.js --config './.eslintrc.js' 'src/**/*.js'"
   },
@@ -23,6 +24,11 @@
   },
   "homepage": "https://github.com/officert/node-cputil#readme",
   "devDependencies": {
-    "eslint": "^7.13.0"
+    "@types/node": "^16.11.12",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
+    "typescript": "^4.5.3"
   }
 }
