@@ -1,13 +1,19 @@
 {
   "name": "node-cputil",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Node js wrapper for Star's cputil",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "module",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "build": "npm run tsc",
+    "build": "tsc",
     "test": "test",
-    "eslint": "node_modules/eslint/bin/eslint.js --config './.eslintrc.js' 'src/**/*.js'"
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,7 +35,9 @@
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.1",
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.5.3"
   }
 }

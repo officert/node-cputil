@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import child_process from 'child_process'
+import * as child_process from 'child_process'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -99,7 +99,7 @@ async function execCputil(command: string, args?: string[]) {
   console.log('fullCommand', fullCommand)
 
   return new Promise((resolve, reject) => {
-    child_process.exec(fullCommand, (error, stdout, stderr) => {
+    child_process.exec(fullCommand, (error?: any, stdout?: any, stderr?: any) => {
       if (error) {
         return reject(error)
       }
