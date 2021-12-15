@@ -37,7 +37,7 @@ export const convertStarPrintMarkUp = async (
 
   if (printerType) cmd = printerType
 
-  cmd += ' scale-to-fit decode'
+  cmd += ' scale-to-fit dither decode'
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
