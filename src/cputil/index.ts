@@ -33,11 +33,9 @@ export const convertStarPrintMarkUp = async (
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
-  let cmd = ''
-
-  if (printerType) cmd = printerType
-
-  cmd += ' scale-to-fit decode'
+  const cmd = `${
+    printerType || StarPrinterType.THERMAL_3
+  } scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
@@ -46,7 +44,7 @@ export const convertStarPrintMarkUp = async (
 
   await writeFile(tmpFilePath, text)
 
-  await execCputil(cmd, [outputFormat, tmpFilePath, outputFilePath])
+  await execCputil(cmd)
 
   const fileBuffer = (await readFile(outputFilePath)) as any
 
@@ -87,19 +85,11 @@ function deleteFile(filename: string) {
   })
 }
 
-async function execCputil(command: string, args?: string[]) {
-  args = !args || !args.length ? [] : args
-
-  const cputilArgs = [command, ...args]
-
-  console.log('cputilArgs', cputilArgs)
-
-  const fullCommand = `${CPUTIL_PATH} ${cputilArgs.join(' ')}`
-
-  console.log('fullCommand', fullCommand)
+async function execCputil(command: string) {
+  console.log('CPUTIL COMMAND', command)
 
   return new Promise((resolve, reject) => {
-    child_process.exec(fullCommand, (error?: any, stdout?: any, stderr?: any) => {
+    child_process.execFile(command, (error?: any, stdout?: any, stderr?: any) => {
       if (error) {
         return reject(error)
       }
