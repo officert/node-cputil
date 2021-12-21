@@ -49,7 +49,7 @@ export const convertStarPrintMarkUp = async (
   const fileBuffer = (await readFile(outputFilePath)) as any
 
   return Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)]).then(() => {
-    return fileBuffer.toString('utf8')
+    return fileBuffer.toString('utf-8')
   })
 }
 
