@@ -89,7 +89,7 @@ async function execCputil(command: string) {
   console.log('CPUTIL COMMAND', command)
 
   return new Promise((resolve, reject) => {
-    child_process.execFile(command, (error?: any, stdout?: any, stderr?: any) => {
+    child_process.exec(command, (error?: any, stdout?: any, stderr?: any) => {
       if (error) {
         return reject(error)
       }
