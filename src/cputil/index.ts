@@ -57,21 +57,34 @@ async function readFile(filename: string) {
   if (!filename) return Promise.reject(new Error('filename'))
 
   return new Promise((resolve, reject) => {
-    fs.readFile(filename, 'utf8', (err, result) => {
-      if (err) return reject(err)
+    fs.readFile(
+      filename,
+      {
+        encoding: 'utf-8',
+      },
+      (err, result) => {
+        if (err) return reject(err)
 
-      return resolve(result)
-    })
+        return resolve(result)
+      }
+    )
   })
 }
 
 async function writeFile(filename: string, data: string) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(filename, data, (err: any) => {
-      if (err) return reject(err)
+    fs.writeFile(
+      filename,
+      data,
+      {
+        encoding: 'utf-8',
+      },
+      (err: any) => {
+        if (err) return reject(err)
 
-      return resolve(null)
-    })
+        return resolve(null)
+      }
+    )
   })
 }
 
