@@ -33,9 +33,9 @@ export const convertStarPrintMarkUp = async (
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
-  const cmd = `${
-    printerType || StarPrinterType.THERMAL_3
-  } scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
+  printerType = printerType ?? StarPrinterType.THERMAL_3
+
+  const cmd = `"${CPUTIL_PATH}" ${printerType} scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
