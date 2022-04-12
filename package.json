@@ -11,7 +11,7 @@
     "copy": "copyfiles -f src/cputil/bin/* lib/cputil/bin",
     "clean": "rm -rf lib",
     "build": "tsc",
-    "test": "test",
+    "test": "echo 'no-op'",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "eslint": "tslint -p tsconfig.json",
     "publish-np": "np patch --no-2fa"
