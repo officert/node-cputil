@@ -4,6 +4,7 @@ export declare enum StarPrinterType {
     THERMAL_4 = "thermal4"
 }
 export declare enum StarContentType {
+    STAR_PRNT = "application/vnd.star.starprnt",
     PNG = "image/png"
 }
 /**
@@ -11,8 +12,9 @@ export declare enum StarContentType {
  * @param {String} text
  * @returns {String}
  */
-export declare const convertStarPrintMarkUp: ({ text, variables, printerType, }: {
+export declare const convertStarPrintMarkUp: ({ text, variables, printerType, contentType, }: {
     text: string;
     variables?: object | undefined;
     printerType?: StarPrinterType | undefined;
+    contentType?: StarContentType | undefined;
 }) => Promise<any>;

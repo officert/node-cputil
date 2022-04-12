@@ -15,7 +15,7 @@ export enum StarPrinterType {
 }
 
 export enum StarContentType {
-  // STAR_PRNT = 'application/vnd.star.starprnt',
+  STAR_PRNT = 'application/vnd.star.starprnt',
   PNG = 'image/png',
 }
 
@@ -28,22 +28,24 @@ export const convertStarPrintMarkUp = async ({
   text,
   variables,
   printerType,
+  contentType,
 }: {
   text: string
   variables?: object
   printerType?: StarPrinterType
+  contentType?: StarContentType
 }) => {
   if (!text) return Promise.reject(new Error('text'))
 
-  const fileName = `html-${new Date().getTime()}.png`
+  const fileName = `tmp-${new Date().getTime()}.png`
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.png', '.bin')}`)
 
-  const outputFormat = StarContentType.PNG
+  const outputFormat = contentType ?? StarContentType.STAR_PRNT
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
-  const cmd = `"${CPUTIL_PATH}" ${printerType} scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
+  // const cmd = `${CPUTIL_PATH} ${printerType} dither scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
@@ -55,15 +57,20 @@ export const convertStarPrintMarkUp = async ({
     html: text,
     content: variables ?? {},
     type: 'png',
+    encoding: 'binary',
   })
 
-  await execCputil(cmd)
+  console.log('TEMP FILE PATH', tmpFilePath)
 
-  const fileBuffer = (await readFile(outputFilePath)) as any
+  // await execCputil(cmd)
 
-  return Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)]).then(() => {
-    return fileBuffer.toString('utf-8')
-  })
+  const fileBuffer = (await readFile(tmpFilePath)) as any
+
+  // await Promise.all([
+  //   // deleteFile(tmpFilePath), deleteFile(outputFilePath)
+  // ])
+
+  return fileBuffer.toString()
 }
 
 async function readFile(filename: string) {
