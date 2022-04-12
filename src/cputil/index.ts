@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
+const nodeHtmlToImage = require('node-html-to-image')
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -14,7 +15,8 @@ export enum StarPrinterType {
 }
 
 export enum StarContentType {
-  STAR_PRNT = 'application/vnd.star.starprnt',
+  // STAR_PRNT = 'application/vnd.star.starprnt',
+  PNG = 'image/png',
 }
 
 /**
@@ -22,16 +24,22 @@ export enum StarContentType {
  * @param {String} text
  * @returns {String}
  */
-export const convertStarPrintMarkUp = async (
-  text: string,
-  outputFormat: StarContentType,
+export const convertStarPrintMarkUp = async ({
+  text,
+  variables,
+  printerType,
+}: {
+  text: string
+  variables?: object
   printerType?: StarPrinterType
-) => {
+}) => {
   if (!text) return Promise.reject(new Error('text'))
 
-  const fileName = `starMarkUp-${new Date().getTime()}.stm`
+  const fileName = `html-${new Date().getTime()}.png`
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
-  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
+  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.png', '.bin')}`)
+
+  const outputFormat = StarContentType.PNG
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
@@ -42,7 +50,12 @@ export const convertStarPrintMarkUp = async (
     makeDir(path.join(__dirname, './output')),
   ])
 
-  await writeFile(tmpFilePath, text)
+  await nodeHtmlToImage({
+    output: tmpFilePath,
+    html: text,
+    content: variables ?? {},
+    type: 'png',
+  })
 
   await execCputil(cmd)
 
