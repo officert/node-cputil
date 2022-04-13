@@ -41,11 +41,7 @@ export const convertStarPrintMarkUp = async ({
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.png', '.bin')}`)
 
-  const outputFormat = contentType ?? StarContentType.STAR_PRNT
-
   printerType = printerType ?? StarPrinterType.THERMAL_3
-
-  const cmd = `${CPUTIL_PATH} ${printerType} dither scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
@@ -62,13 +58,18 @@ export const convertStarPrintMarkUp = async ({
 
   console.log('TEMP FILE PATH', tmpFilePath)
 
-  await execCputil(cmd)
+  await execCputil({
+    printerType,
+    contentType: contentType ?? StarContentType.STAR_PRNT,
+    tmpFilePath,
+    outputFilePath,
+  })
 
   const fileBuffer = await readFile(tmpFilePath)
 
-  await Promise.all([
-    deleteFile(tmpFilePath), deleteFile(outputFilePath)
-  ])
+  // await Promise.all([
+  //   deleteFile(tmpFilePath), deleteFile(outputFilePath)
+  // ])
 
   return fileBuffer.toString()
 }
@@ -118,11 +119,31 @@ function deleteFile(filename: string) {
   })
 }
 
-async function execCputil(command: string) {
-  console.log('CPUTIL COMMAND', command)
+async function execCputil({
+  printerType,
+  contentType,
+  tmpFilePath,
+  outputFilePath,
+}: {
+  printerType: StarPrinterType
+  contentType: StarContentType
+  tmpFilePath: string
+  outputFilePath: string
+}) {
+  const args = [
+    printerType,
+    'dither',
+    'scale-to-fit',
+    'decode',
+    contentType,
+    tmpFilePath,
+    outputFilePath,
+  ]
+
+  console.log('CPUTIL ARGS', args)
 
   return new Promise((resolve, reject) => {
-    child_process.exec(command, (error?: any, stdout?: any, stderr?: any) => {
+    child_process.execFile(CPUTIL_PATH, args, (error?: any, stdout?: any, stderr?: any) => {
       if (error) {
         return reject(error)
       }

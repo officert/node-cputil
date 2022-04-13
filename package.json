@@ -1,6 +1,8 @@
 {
   "name": "node-cputil",
   "version": "0.4.1",
+  "author": "Tim Officer",
+  "license": "MIT",
   "description": "Node js wrapper for Star's cputil",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,11 +10,10 @@
     "lib/**/*"
   ],
   "scripts": {
-    "copy": "copyfiles -f src/cputil/bin/* lib/cputil/bin",
+    "copy": "copyfiles -f src/cputil/bin/linux/* lib/cputil/bin/linux && copyfiles -f src/cputil/bin/macos/* lib/cputil/bin/macos",
     "clean": "rm -rf lib",
-    "build": "tsc",
+    "build": "tsc && npm run copy",
     "test": "echo 'no-op'",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "eslint": "tslint -p tsconfig.json",
     "publish-np": "np patch --no-2fa"
   },
@@ -25,8 +26,6 @@
     "star",
     "cputil"
   ],
-  "author": "Tim Officer",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/officert/node-cputil/issues"
   },
