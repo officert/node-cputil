@@ -18,6 +18,7 @@ pids
 logs
 results
 local
+lib
 
 npm-debug.log
 coverage

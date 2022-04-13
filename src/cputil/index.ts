@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
-const nodeHtmlToImage = require('node-html-to-image')
+import nodeHtmlToImage from 'node-html-to-image'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -45,7 +45,7 @@ export const convertStarPrintMarkUp = async ({
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
-  // const cmd = `${CPUTIL_PATH} ${printerType} dither scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
+  const cmd = `${CPUTIL_PATH} ${printerType} dither scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
@@ -62,18 +62,18 @@ export const convertStarPrintMarkUp = async ({
 
   console.log('TEMP FILE PATH', tmpFilePath)
 
-  // await execCputil(cmd)
+  await execCputil(cmd)
 
-  const fileBuffer = (await readFile(tmpFilePath)) as any
+  const fileBuffer = await readFile(tmpFilePath)
 
-  // await Promise.all([
-  //   // deleteFile(tmpFilePath), deleteFile(outputFilePath)
-  // ])
+  await Promise.all([
+    deleteFile(tmpFilePath), deleteFile(outputFilePath)
+  ])
 
   return fileBuffer.toString()
 }
 
-async function readFile(filename: string) {
+async function readFile(filename: string): Promise<string> {
   if (!filename) return Promise.reject(new Error('filename'))
 
   return new Promise((resolve, reject) => {
@@ -91,22 +91,22 @@ async function readFile(filename: string) {
   })
 }
 
-async function writeFile(filename: string, data: string) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(
-      filename,
-      data,
-      {
-        encoding: 'utf-8',
-      },
-      (err: any) => {
-        if (err) return reject(err)
+// async function writeFile(filename: string, data: string) {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile(
+//       filename,
+//       data,
+//       {
+//         encoding: 'utf-8',
+//       },
+//       (err: any) => {
+//         if (err) return reject(err)
 
-        return resolve(null)
-      }
-    )
-  })
-}
+//         return resolve(null)
+//       }
+//     )
+//   })
+// }
 
 function deleteFile(filename: string) {
   return new Promise((resolve, reject) => {
