@@ -1,7 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
-const nodeHtmlToImage = require('node-html-to-image')
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -15,8 +14,7 @@ export enum StarPrinterType {
 }
 
 export enum StarContentType {
-  // STAR_PRNT = 'application/vnd.star.starprnt',
-  PNG = 'image/png',
+  STAR_PRNT = 'application/vnd.star.starprnt',
 }
 
 /**
@@ -26,61 +24,48 @@ export enum StarContentType {
  */
 export const convertStarPrintMarkUp = async ({
   text,
-  variables,
   printerType,
 }: {
   text: string
-  variables?: object
   printerType?: StarPrinterType
 }) => {
   if (!text) return Promise.reject(new Error('text'))
 
-  const fileName = `html-${new Date().getTime()}.png`
+  const fileName = `html-${new Date().getTime()}.stm`
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
-  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.png', '.bin')}`)
+  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
-  const outputFormat = StarContentType.PNG
+  const outputFormat = StarContentType.STAR_PRNT
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
-  const cmd = `"${CPUTIL_PATH}" ${printerType} scale-to-fit decode ${outputFormat} "${tmpFilePath}" "${outputFilePath}"`
+  const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
     makeDir(path.join(__dirname, './output')),
   ])
 
-  await nodeHtmlToImage({
-    output: tmpFilePath,
-    html: text,
-    content: variables ?? {},
-    type: 'png',
-  })
+  await writeFile(tmpFilePath, text)
 
   await execCputil(cmd)
 
   const fileBuffer = (await readFile(outputFilePath)) as any
 
-  return Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)]).then(() => {
-    return fileBuffer.toString('utf-8')
-  })
+  await Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])
+
+  return fileBuffer
 }
 
 async function readFile(filename: string) {
   if (!filename) return Promise.reject(new Error('filename'))
 
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      filename,
-      {
-        encoding: 'utf-8',
-      },
-      (err, result) => {
-        if (err) return reject(err)
+    fs.readFile(filename, (err, result) => {
+      if (err) return reject(err)
 
-        return resolve(result)
-      }
-    )
+      return resolve(result)
+    })
   })
 }
 

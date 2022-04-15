@@ -1,6 +1,6 @@
 {
   "name": "node-cputil",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Node js wrapper for Star's cputil",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,11 +8,10 @@
     "lib/**/*"
   ],
   "scripts": {
-    "copy": "copyfiles -f src/cputil/bin/* lib/cputil/bin",
+    "copy": "copyfiles -f src/cputil/bin/linux/* lib/cputil/bin/linux && copyfiles -f src/cputil/bin/macos/* lib/cputil/bin/macos",
     "clean": "rm -rf lib",
-    "build": "tsc",
+    "build": "tsc && npm run copy",
     "test": "echo 'no-op'",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "eslint": "tslint -p tsconfig.json",
     "publish-np": "np patch --no-2fa"
   },
@@ -42,8 +41,5 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.5.3",
     "np": "^7.6.0"
-  },
-  "dependencies": {
-    "node-html-to-image": "^3.2.4"
   }
 }
