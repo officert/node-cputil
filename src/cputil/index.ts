@@ -65,30 +65,24 @@ export const convertStarPrintMarkUp = async ({
     outputFilePath,
   })
 
-  const fileBuffer = await readFile(tmpFilePath)
+  console.log('OUTPUT FILE PATH', outputFilePath)
 
   // await Promise.all([
   //   deleteFile(tmpFilePath), deleteFile(outputFilePath)
   // ])
 
-  return fileBuffer.toString()
+  return readFile(outputFilePath)
 }
 
-async function readFile(filename: string): Promise<string> {
+async function readFile(filename: string): Promise<Buffer> {
   if (!filename) return Promise.reject(new Error('filename'))
 
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      filename,
-      {
-        encoding: 'utf-8',
-      },
-      (err, result) => {
-        if (err) return reject(err)
+    fs.readFile(filename, (err, result) => {
+      if (err) return reject(err)
 
-        return resolve(result)
-      }
-    )
+      return resolve(result)
+    })
   })
 }
 
