@@ -14,7 +14,8 @@ export enum StarPrinterType {
 }
 
 export enum StarContentType {
-  STAR_PRNT = 'application/vnd.star.starprnt',
+  STAR_VND_PRNT = 'application/vnd.star.starprnt',
+  STAR_VND_LINE = 'application/vnd.star.line'
 }
 
 /**
@@ -25,9 +26,11 @@ export enum StarContentType {
 export const convertStarPrintMarkUp = async ({
   text,
   printerType,
+  contentType,
 }: {
   text: string
   printerType?: StarPrinterType
+  contentType?: StarContentType
 }) => {
   if (!text) return Promise.reject(new Error('text'))
 
@@ -35,7 +38,7 @@ export const convertStarPrintMarkUp = async ({
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
-  const outputFormat = StarContentType.STAR_PRNT
+  const outputFormat = contentType ?? StarContentType.STAR_VND_PRNT
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
