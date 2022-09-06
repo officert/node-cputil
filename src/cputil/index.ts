@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
+import { v4 as uuidv4 } from 'uuid'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -15,7 +16,7 @@ export enum StarPrinterType {
 
 export enum StarContentType {
   STAR_VND_PRNT = 'application/vnd.star.starprnt',
-  STAR_VND_LINE = 'application/vnd.star.line'
+  STAR_VND_LINE = 'application/vnd.star.line',
 }
 
 /**
@@ -34,7 +35,7 @@ export const convertStarPrintMarkUp = async ({
 }) => {
   if (!text) return Promise.reject(new Error('text'))
 
-  const fileName = `html-${new Date().getTime()}.stm`
+  const fileName = `html-${uuidv4()}.stm`
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
