@@ -1,3 +1,8 @@
 {
-  "runtimeOptions": {}
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true,
+      "System.Globalization.Invariant": true
+    }
+  }
 }
