@@ -1,6 +1,6 @@
 {
   "name": "node-cputil",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Node js wrapper for Star's cputil",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,9 +8,8 @@
     "lib/**/*"
   ],
   "scripts": {
-    "copy": "copyfiles -f src/cputil/bin/linux/* lib/cputil/bin/linux && copyfiles -f src/cputil/bin/macos/* lib/cputil/bin/macos",
     "clean": "rm -rf lib",
-    "build": "tsc && npm run copy",
+    "build": "tsc",
     "test": "echo 'no-op'",
     "eslint": "tslint -p tsconfig.json",
     "publish-np": "np patch --no-2fa"

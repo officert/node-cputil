@@ -1,2314 +1,982 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v3.1/linux-x64",
-    "signature": ""
+    "name": ".NETCoreApp,Version=v2.1/linux-x64",
+    "signature": "c90e11235629c59d304b6ab4dfebabd48f1c2d2f"
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v3.1": {},
-    ".NETCoreApp,Version=v3.1/linux-x64": {
-      "cputil/1.1.1": {
+    ".NETCoreApp,Version=v2.1": {},
+    ".NETCoreApp,Version=v2.1/linux-x64": {
+      "cputil/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "StarMicronics.CloudPRNT-Utility": "1.1.1",
-          "runtimepack.Microsoft.NETCore.App.Runtime.linux-x64": "3.1.10"
+          "Microsoft.NETCore.App": "2.1.10",
+          "Newtonsoft.Json": "11.0.2",
+          "StarMicronics.CloudPRNT-Utility": "0.9.1"
         },
         "runtime": {
           "cputil.dll": {}
         }
       },
-      "runtimepack.Microsoft.NETCore.App.Runtime.linux-x64/3.1.10": {
+      "Microsoft.NETCore.App/2.1.10": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostPolicy": "2.1.10",
+          "Microsoft.NETCore.Platforms": "2.1.4",
+          "Microsoft.NETCore.Targets": "2.0.0",
+          "NETStandard.Library": "2.0.3",
+          "runtime.linux-x64.Microsoft.NETCore.App": "2.1.10"
+        }
+      },
+      "Microsoft.NETCore.DotNetAppHost/2.1.10": {
+        "dependencies": {
+          "runtime.linux-x64.Microsoft.NETCore.DotNetAppHost": "2.1.10"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostPolicy/2.1.10": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostResolver": "2.1.10",
+          "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.10"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostResolver/2.1.10": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetAppHost": "2.1.10",
+          "runtime.linux-x64.Microsoft.NETCore.DotNetHostResolver": "2.1.10"
+        }
+      },
+      "Microsoft.NETCore.Platforms/2.1.4": {},
+      "Microsoft.NETCore.Targets/2.0.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.4"
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
         "runtime": {
-          "Microsoft.CSharp.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "Microsoft.VisualBasic.Core.dll": {
-            "assemblyVersion": "10.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "Microsoft.VisualBasic.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "Microsoft.Win32.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "Microsoft.Win32.Registry.dll": {
-            "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.AppContext.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Buffers.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Collections.Concurrent.dll": {
-            "assemblyVersion": "4.0.15.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Collections.Immutable.dll": {
-            "assemblyVersion": "1.2.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Collections.NonGeneric.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Collections.Specialized.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Collections.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.Annotations.dll": {
-            "assemblyVersion": "4.3.1.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.DataAnnotations.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.EventBasedAsync.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.Primitives.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.TypeConverter.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.ComponentModel.dll": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "runtime.linux-x64.Microsoft.NETCore.App/2.1.10": {
+        "runtime": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/Microsoft.CSharp.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Configuration.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/Microsoft.VisualBasic.dll": {
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Console.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/Microsoft.Win32.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Core.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/Microsoft.Win32.Registry.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Data.Common.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/SOS.NETCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Data.DataSetExtensions.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Data.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.Contracts.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.Debug.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.DiagnosticSource.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.FileVersionInfo.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.Process.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.StackTrace.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.TextWriterTraceListener.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.Tools.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.TraceSource.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Diagnostics.Tracing.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Drawing.Primitives.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.AppContext.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Drawing.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Buffers.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Dynamic.Runtime.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Collections.Concurrent.dll": {
+            "assemblyVersion": "4.0.14.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Globalization.Calendars.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Collections.Immutable.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Globalization.Extensions.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Collections.NonGeneric.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Globalization.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Collections.Specialized.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.IO.Compression.Brotli.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Collections.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.IO.Compression.FileSystem.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.Compression.ZipFile.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.Compression.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.FileSystem.AccessControl.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.FileSystem.DriveInfo.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.FileSystem.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.FileSystem.Watcher.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.FileSystem.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.IsolatedStorage.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.MemoryMappedFiles.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.Pipes.AccessControl.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.Pipes.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.UnmanagedMemoryStream.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.IO.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Linq.Expressions.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Linq.Parallel.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Linq.Queryable.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Linq.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Memory.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.Annotations.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Net.Http.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.HttpListener.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Mail.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.NameResolution.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.NetworkInformation.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Ping.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Requests.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Security.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.ServicePoint.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.Sockets.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.WebClient.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.WebHeaderCollection.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.WebProxy.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.WebSockets.Client.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.WebSockets.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Net.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.DataAnnotations.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Numerics.Vectors.dll": {
-            "assemblyVersion": "4.1.6.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.EventBasedAsync.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Numerics.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.Primitives.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.TypeConverter.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ComponentModel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Configuration.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.ObjectModel.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Private.DataContractSerialization.dll": {
-            "assemblyVersion": "4.1.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Private.Uri.dll": {
-            "assemblyVersion": "4.0.6.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Private.Xml.Linq.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Private.Xml.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Reflection.DispatchProxy.dll": {
-            "assemblyVersion": "4.0.6.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Reflection.Emit.ILGeneration.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Console.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.Emit.Lightweight.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Data.Common.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Data.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.Contracts.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.Debug.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.Emit.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "4.0.3.1",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.Extensions.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.FileVersionInfo.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.Metadata.dll": {
-            "assemblyVersion": "1.4.5.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.Process.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.StackTrace.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.TypeExtensions.dll": {
-            "assemblyVersion": "4.1.5.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.TextWriterTraceListener.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Reflection.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.Tools.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Resources.Reader.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.TraceSource.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Resources.ResourceManager.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Diagnostics.Tracing.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Resources.Writer.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Drawing.Primitives.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.6.0",
-            "fileVersion": "4.0.0.0"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Drawing.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.CompilerServices.VisualC.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Dynamic.Runtime.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Extensions.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Globalization.Calendars.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Handles.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Globalization.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.InteropServices.RuntimeInformation.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Globalization.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Compression.Brotli.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Compression.FileSystem.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Compression.ZipFile.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.InteropServices.WindowsRuntime.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Compression.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.InteropServices.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.FileSystem.AccessControl.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Intrinsics.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.FileSystem.DriveInfo.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.FileSystem.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.FileSystem.Watcher.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.FileSystem.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.IsolatedStorage.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.MemoryMappedFiles.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Pipes.AccessControl.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.Pipes.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.UnmanagedMemoryStream.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.IO.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Linq.Expressions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Linq.Parallel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Linq.Queryable.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Linq.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Memory.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Http.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.HttpListener.dll": {
             "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Loader.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Mail.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.NameResolution.dll": {
             "assemblyVersion": "4.1.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Numerics.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.NetworkInformation.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Serialization.Formatters.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Ping.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Requests.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Security.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.ServicePoint.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.Sockets.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.WebClient.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.WebHeaderCollection.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.WebProxy.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.WebSockets.Client.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.WebSockets.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Net.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Numerics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ObjectModel.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Private.DataContractSerialization.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Private.Uri.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Private.Xml.Linq.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Private.Xml.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.DispatchProxy.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Serialization.Json.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Emit.ILGeneration.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Serialization.Primitives.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Serialization.Xml.dll": {
-            "assemblyVersion": "4.1.5.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Emit.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.Serialization.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.WindowsRuntime.UI.Xaml.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Metadata.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.WindowsRuntime.dll": {
-            "assemblyVersion": "4.0.15.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Runtime.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Security.AccessControl.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.TypeExtensions.dll": {
             "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Claims.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Reflection.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Algorithms.dll": {
-            "assemblyVersion": "4.3.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Resources.Reader.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Cng.dll": {
-            "assemblyVersion": "4.3.3.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Resources.ResourceManager.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Csp.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Resources.Writer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Encoding.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.CompilerServices.VisualC.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.OpenSsl.dll": {
-            "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Extensions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Handles.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.X509Certificates.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Principal.Windows.dll": {
-            "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Principal.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.InteropServices.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.SecureString.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Loader.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Numerics.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Formatters.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Json.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Primitives.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Serialization.Xml.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.Serialization.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.ServiceModel.Web.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Runtime.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.ServiceProcess.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.AccessControl.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Text.Encoding.CodePages.dll": {
-            "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Claims.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Text.Encoding.Extensions.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Text.Encoding.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Text.Encodings.Web.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Text.Json.dll": {
-            "assemblyVersion": "4.0.1.2",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Text.RegularExpressions.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Threading.Channels.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Threading.Overlapped.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Threading.Tasks.Dataflow.dll": {
-            "assemblyVersion": "4.6.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Threading.Tasks.Extensions.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.Algorithms.dll": {
             "assemblyVersion": "4.3.1.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.Tasks.Parallel.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.Cng.dll": {
+            "assemblyVersion": "4.3.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.Tasks.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.Csp.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.Thread.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.Encoding.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.ThreadPool.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.OpenSsl.dll": {
+            "assemblyVersion": "4.1.1.1",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.Timer.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.Primitives.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Threading.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Cryptography.X509Certificates.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Transactions.Local.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
+            "assemblyVersion": "4.1.1.1",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Transactions.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.Principal.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.SecureString.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Security.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.ValueTuple.dll": {
-            "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Web.HttpUtility.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Web.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ServiceModel.Web.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Windows.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ServiceProcess.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Xml.Linq.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Text.Encoding.Extensions.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Text.Encoding.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Text.RegularExpressions.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Overlapped.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Tasks.Dataflow.dll": {
+            "assemblyVersion": "4.6.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Tasks.Parallel.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Tasks.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Thread.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.ThreadPool.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.Timer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Threading.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Transactions.Local.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Transactions.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Xml.ReaderWriter.dll": {
-            "assemblyVersion": "4.2.2.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.ValueTuple.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Xml.Serialization.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Web.HttpUtility.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Web.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Xml.XDocument.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Xml.XPath.XDocument.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Xml.XPath.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Xml.XmlDocument.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Xml.XmlSerializer.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.51901"
-          },
-          "System.Xml.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Windows.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.Linq.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "WindowsBase.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.ReaderWriter.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.Serialization.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "mscorlib.dll": {
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.XDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.XPath.XDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.XPath.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.XmlDocument.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.XmlSerializer.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.Xml.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51901"
+            "fileVersion": "4.6.27514.2"
           },
-          "netstandard.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "4.700.20.51901"
+          "runtimes/linux-x64/lib/netcoreapp2.1/System.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/WindowsBase.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/mscorlib.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.27514.2"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.1/netstandard.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.6.27514.2"
           }
         },
         "native": {
-          "SOS_README.md": {
+          "runtimes/linux-x64/native/System.Globalization.Native.so": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Globalization.Native.so": {
+          "runtimes/linux-x64/native/System.IO.Compression.Native.a": {
             "fileVersion": "0.0.0.0"
           },
-          "System.IO.Compression.Native.a": {
+          "runtimes/linux-x64/native/System.IO.Compression.Native.so": {
             "fileVersion": "0.0.0.0"
           },
-          "System.IO.Compression.Native.so": {
+          "runtimes/linux-x64/native/System.Native.a": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Native.a": {
+          "runtimes/linux-x64/native/System.Native.so": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Native.so": {
+          "runtimes/linux-x64/native/System.Net.Http.Native.a": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Net.Http.Native.a": {
+          "runtimes/linux-x64/native/System.Net.Http.Native.so": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Net.Http.Native.so": {
+          "runtimes/linux-x64/native/System.Net.Security.Native.a": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Net.Security.Native.a": {
+          "runtimes/linux-x64/native/System.Net.Security.Native.so": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Net.Security.Native.so": {
-            "fileVersion": "0.0.0.0"
-          },
-          "System.Private.CoreLib.dll": {
+          "runtimes/linux-x64/native/System.Private.CoreLib.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.20.51601"
+            "fileVersion": "4.6.27514.2"
           },
-          "System.Security.Cryptography.Native.OpenSsl.a": {
+          "runtimes/linux-x64/native/System.Security.Cryptography.Native.OpenSsl.a": {
             "fileVersion": "0.0.0.0"
           },
-          "System.Security.Cryptography.Native.OpenSsl.so": {
+          "runtimes/linux-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "fileVersion": "0.0.0.0"
           },
-          "createdump": {
+          "runtimes/linux-x64/native/createdump": {
             "fileVersion": "0.0.0.0"
           },
-          "libclrjit.so": {
+          "runtimes/linux-x64/native/libclrjit.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libcoreclr.so": {
+          "runtimes/linux-x64/native/libcoreclr.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libcoreclrtraceptprovider.so": {
+          "runtimes/linux-x64/native/libcoreclrtraceptprovider.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libdbgshim.so": {
+          "runtimes/linux-x64/native/libdbgshim.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libhostfxr.so": {
+          "runtimes/linux-x64/native/libmscordaccore.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libhostpolicy.so": {
+          "runtimes/linux-x64/native/libmscordbi.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libmscordaccore.so": {
+          "runtimes/linux-x64/native/libsos.so": {
             "fileVersion": "0.0.0.0"
           },
-          "libmscordbi.so": {
+          "runtimes/linux-x64/native/libsosplugin.so": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/sosdocsunix.txt": {
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.1": {},
-      "Newtonsoft.Json/12.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.3.23909"
+      "runtime.linux-x64.Microsoft.NETCore.DotNetAppHost/2.1.10": {
+        "native": {
+          "runtimes/linux-x64/native/apphost": {
+            "fileVersion": "0.0.0.0"
           }
         }
       },
-      "SixLabors.ImageSharp/1.0.2": {
-        "runtime": {
-          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.2.0"
-          }
-        }
-      },
-      "StarMicronics.CloudPRNT-Utility/1.1.1": {
+      "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.10": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "SixLabors.ImageSharp": "1.0.2",
-          "System.Text.Encoding.CodePages": "4.7.1"
+          "Microsoft.NETCore.DotNetHostResolver": "2.1.10"
+        },
+        "native": {
+          "runtimes/linux-x64/native/libhostpolicy.so": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.linux-x64.Microsoft.NETCore.DotNetHostResolver/2.1.10": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetAppHost": "2.1.10"
+        },
+        "native": {
+          "runtimes/linux-x64/native/libhostfxr.so": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SixLabors.Core/1.0.0-beta0006": {
+        "dependencies": {
+          "System.Buffers": "4.5.0",
+          "System.Memory": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/SixLabors.Core.dll": {
+            "assemblyVersion": "0.1.0.0",
+            "fileVersion": "0.1.0.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/1.0.0-beta0005": {
+        "dependencies": {
+          "SixLabors.Core": "1.0.0-beta0006",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "StarMicronics.CloudPRNT-Utility/0.9.1": {
+        "dependencies": {
+          "SixLabors.ImageSharp": "1.0.0-beta0005",
+          "System.Text.Encoding.CodePages": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/StarCloudPRNTUtility.dll": {
-            "assemblyVersion": "1.1.1.0",
-            "fileVersion": "1.1.1.0"
+            "assemblyVersion": "0.9.0.1",
+            "fileVersion": "0.9.0.1"
           }
         }
       },
-      "System.Text.Encoding.CodePages/4.7.1": {
+      "System.Buffers/4.5.0": {},
+      "System.Memory/4.5.1": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "System.Text.Encoding.CodePages/4.5.0": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.1"
+          "Microsoft.NETCore.Platforms": "2.1.4",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
         }
       }
     }
   },
   "libraries": {
-    "cputil/1.1.1": {
+    "cputil/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "runtimepack.Microsoft.NETCore.App.Runtime.linux-x64/3.1.10": {
-      "type": "runtimepack",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.NETCore.Platforms/3.1.1": {
+    "Microsoft.NETCore.App/2.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RmINcaqiEkawM9C8oxFMN/CZmn1fGKWVsosbSY/8ARUNdHqV47hqhPVbrG3qUqLaRQI5w4HuqFOqrbhoSWcH6w==",
-      "path": "microsoft.netcore.platforms/3.1.1",
-      "hashPath": "microsoft.netcore.platforms.3.1.1.nupkg.sha512"
+      "sha512": "sha512-dBfbUfZmIuIQFRM035oMLhWIEGcutMNJGkhQ27rm/bX0cBoAWmaxYtfRfgtneLV7dg+VfrAljX/PG4IgRSj8wg==",
+      "path": "microsoft.netcore.app/2.1.10",
+      "hashPath": "microsoft.netcore.app.2.1.10.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.3": {
+    "Microsoft.NETCore.DotNetAppHost/2.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "path": "newtonsoft.json/12.0.3",
-      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+      "sha512": "sha512-DG8kaCpxMsS940PnL1hnk0RzauA2xi5S5JXZr3hSgUzQxcA/P4s+rrawcxSSimfQx7tcba983bQt8YOeNrzhRw==",
+      "path": "microsoft.netcore.dotnetapphost/2.1.10",
+      "hashPath": "microsoft.netcore.dotnetapphost.2.1.10.nupkg.sha512"
     },
-    "SixLabors.ImageSharp/1.0.2": {
+    "Microsoft.NETCore.DotNetHostPolicy/2.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iZJ37Iss3pUkFl961x1aka85QuvgY9oNZabHijzVnHs4QTz6EMNx3zjJDyvK/0+Ryj6JPv/PC7GVIJXLHtu2nQ==",
-      "path": "sixlabors.imagesharp/1.0.2",
-      "hashPath": "sixlabors.imagesharp.1.0.2.nupkg.sha512"
+      "sha512": "sha512-Jo3ow4v6DuM+k459bv2bzIqYhcbBBguRUdhnVJlAQI86fD1g15kIkGmTYYb+bAiy4LttgmL4j+sUOr1wfctZwQ==",
+      "path": "microsoft.netcore.dotnethostpolicy/2.1.10",
+      "hashPath": "microsoft.netcore.dotnethostpolicy.2.1.10.nupkg.sha512"
     },
-    "StarMicronics.CloudPRNT-Utility/1.1.1": {
+    "Microsoft.NETCore.DotNetHostResolver/2.1.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sXlk152JslXVp7rtRpomgKrnB96ZMG5GrBXk6K+m8Ckox79gxAKaElaBDoA4htotewEWEOsbWt/RJJnAExRfEA==",
-      "path": "starmicronics.cloudprnt-utility/1.1.1",
-      "hashPath": "starmicronics.cloudprnt-utility.1.1.1.nupkg.sha512"
+      "sha512": "sha512-kDBEtOxg466DPbBapLpiXWCBRwA6OdXaAwY5b8DM+Y46JX16oZAJgYWKsk2VDderA8LPo/A6A2a8HL3wIXkdLw==",
+      "path": "microsoft.netcore.dotnethostresolver/2.1.10",
+      "hashPath": "microsoft.netcore.dotnethostresolver.2.1.10.nupkg.sha512"
     },
-    "System.Text.Encoding.CodePages/4.7.1": {
+    "Microsoft.NETCore.Platforms/2.1.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-i2fOvznVVgOOTLUz8FgSap/MsR98I4Iaoz99VXcOW/e7Y2OdY42zhYpBYpZyivk5alYY/UsOWAVswhtjxceodA==",
-      "path": "system.text.encoding.codepages/4.7.1",
-      "hashPath": "system.text.encoding.codepages.4.7.1.nupkg.sha512"
+      "sha512": "sha512-KA9gm+dY8vOkUxAU9dypnFVyuqYuE4pPkLrBEjdttJ0RlyQtHnxmPl0pgOgJkBCg0uIO2OTRooDIniXFmPmkFw==",
+      "path": "microsoft.netcore.platforms/2.1.4",
+      "hashPath": "microsoft.netcore.platforms.2.1.4.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mJnCMoBfWL0lxxlBFJ/8cZKTfPpI82TekZkUqvSCBtunUaaqr2LVeWl1zQYdanAdk4Ddf1HCwb8+DNYaNFBk1w==",
+      "path": "microsoft.netcore.targets/2.0.0",
+      "hashPath": "microsoft.netcore.targets.2.0.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.App/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GNG/5dd/Z4mElGTUD6X6rqibcLnMvzIsTDagu5sfVtiyaJFX6zok4yG+Vtnrei4Jjj1vhAQwdCNlxKRbMsIotA==",
+      "path": "runtime.linux-x64.microsoft.netcore.app/2.1.10",
+      "hashPath": "runtime.linux-x64.microsoft.netcore.app.2.1.10.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.DotNetAppHost/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xg/vttqbp7XHGH+nSaUTYwyr9iNrhUkTSIs8CmuH0DlHUqxXVgNsdkPvnsp36wKUQtK79pAazMA2m5mrfHZ8lg==",
+      "path": "runtime.linux-x64.microsoft.netcore.dotnetapphost/2.1.10",
+      "hashPath": "runtime.linux-x64.microsoft.netcore.dotnetapphost.2.1.10.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a6nwuMe7cRr/0f2kPHEgMMSZa7Bjrd15m5vuSjQbNPJJMyabSBKV8LqlAylaZuwxXPk6/jiWSB2UVWa2APrdDw==",
+      "path": "runtime.linux-x64.microsoft.netcore.dotnethostpolicy/2.1.10",
+      "hashPath": "runtime.linux-x64.microsoft.netcore.dotnethostpolicy.2.1.10.nupkg.sha512"
+    },
+    "runtime.linux-x64.Microsoft.NETCore.DotNetHostResolver/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RiyXtbnIzAajHzZ/dDgM+7lI5DuqksicDHo49NpCQ/wGx0nhWbO83mpepjsC1LwcdeA1QToCdGSYgNrQcZ7GuA==",
+      "path": "runtime.linux-x64.microsoft.netcore.dotnethostresolver/2.1.10",
+      "hashPath": "runtime.linux-x64.microsoft.netcore.dotnethostresolver.2.1.10.nupkg.sha512"
+    },
+    "SixLabors.Core/1.0.0-beta0006": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xv2bOML08se0GWIQJVaIpVV168KQHLYQyESdk5Kv5Sgw0iuZShq6orBXY5AGRwQAyPubGXUVPj/AHK12DI+DxQ==",
+      "path": "sixlabors.core/1.0.0-beta0006",
+      "hashPath": "sixlabors.core.1.0.0-beta0006.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/1.0.0-beta0005": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mhB3ulgr51tKuLRLC/xBgNSDv6qsAsehfwt/aj1OuKlLWu4oXUl2V6HdLKxqQftigkQthQVujI0gMLH6/o7zNg==",
+      "path": "sixlabors.imagesharp/1.0.0-beta0005",
+      "hashPath": "sixlabors.imagesharp.1.0.0-beta0005.nupkg.sha512"
+    },
+    "StarMicronics.CloudPRNT-Utility/0.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KjEErEUIGonM/BlqbSyF4AfTkZMpsEBDrN+UAxPHIFV/eVo2G3XME0sDE5mTVFpJy6jgRE0NM/G24c2D6Xs5lw==",
+      "path": "starmicronics.cloudprnt-utility/0.9.1",
+      "hashPath": "starmicronics.cloudprnt-utility.0.9.1.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sDJYJpGtTgx+23Ayu5euxG5mAXWdkDb4+b0rD0Cab0M1oQS9H0HXGPriKcqpXuiJDTV7fTp/d+fMDJmnr6sNvA==",
+      "path": "system.memory/4.5.1",
+      "hashPath": "system.memory.4.5.1.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
+      "path": "system.text.encoding.codepages/4.5.0",
+      "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
     }
-  },
-  "runtimes": {
-    "alpine-x64": [
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.10-x64": [
-      "alpine.3.10",
-      "alpine.3.9-x64",
-      "alpine.3.9",
-      "alpine.3.8-x64",
-      "alpine.3.8",
-      "alpine.3.7-x64",
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.11-x64": [
-      "alpine.3.11",
-      "alpine.3.10-x64",
-      "alpine.3.10",
-      "alpine.3.9-x64",
-      "alpine.3.9",
-      "alpine.3.8-x64",
-      "alpine.3.8",
-      "alpine.3.7-x64",
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.12-x64": [
-      "alpine.3.12",
-      "alpine.3.11-x64",
-      "alpine.3.11",
-      "alpine.3.10-x64",
-      "alpine.3.10",
-      "alpine.3.9-x64",
-      "alpine.3.9",
-      "alpine.3.8-x64",
-      "alpine.3.8",
-      "alpine.3.7-x64",
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.6-x64": [
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.7-x64": [
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.8-x64": [
-      "alpine.3.8",
-      "alpine.3.7-x64",
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "alpine.3.9-x64": [
-      "alpine.3.9",
-      "alpine.3.8-x64",
-      "alpine.3.8",
-      "alpine.3.7-x64",
-      "alpine.3.7",
-      "alpine.3.6-x64",
-      "alpine.3.6",
-      "alpine-x64",
-      "alpine",
-      "linux-musl-x64",
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "centos-x64": [
-      "centos",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "centos.7-x64": [
-      "centos.7",
-      "centos-x64",
-      "rhel.7-x64",
-      "centos",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "centos.8-x64": [
-      "centos.8",
-      "centos-x64",
-      "rhel.8-x64",
-      "centos",
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "debian-x64": [
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "debian.10-x64": [
-      "debian.10",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "debian.8-x64": [
-      "debian.8",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "debian.9-x64": [
-      "debian.9",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora-x64": [
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.23-x64": [
-      "fedora.23",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.24-x64": [
-      "fedora.24",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.25-x64": [
-      "fedora.25",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.26-x64": [
-      "fedora.26",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.27-x64": [
-      "fedora.27",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.28-x64": [
-      "fedora.28",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.29-x64": [
-      "fedora.29",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.30-x64": [
-      "fedora.30",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.31-x64": [
-      "fedora.31",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.32-x64": [
-      "fedora.32",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "fedora.33-x64": [
-      "fedora.33",
-      "fedora-x64",
-      "fedora",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "gentoo-x64": [
-      "gentoo",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linux-musl-x64": [
-      "linux-musl",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linux-x64": [
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.17-x64": [
-      "linuxmint.17",
-      "ubuntu.14.04-x64",
-      "ubuntu.14.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.17.1-x64": [
-      "linuxmint.17.1",
-      "linuxmint.17-x64",
-      "linuxmint.17",
-      "ubuntu.14.04-x64",
-      "ubuntu.14.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.17.2-x64": [
-      "linuxmint.17.2",
-      "linuxmint.17.1-x64",
-      "linuxmint.17.1",
-      "linuxmint.17-x64",
-      "linuxmint.17",
-      "ubuntu.14.04-x64",
-      "ubuntu.14.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.17.3-x64": [
-      "linuxmint.17.3",
-      "linuxmint.17.2-x64",
-      "linuxmint.17.2",
-      "linuxmint.17.1-x64",
-      "linuxmint.17.1",
-      "linuxmint.17-x64",
-      "linuxmint.17",
-      "ubuntu.14.04-x64",
-      "ubuntu.14.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.18-x64": [
-      "linuxmint.18",
-      "ubuntu.16.04-x64",
-      "ubuntu.16.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.18.1-x64": [
-      "linuxmint.18.1",
-      "linuxmint.18-x64",
-      "linuxmint.18",
-      "ubuntu.16.04-x64",
-      "ubuntu.16.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.18.2-x64": [
-      "linuxmint.18.2",
-      "linuxmint.18.1-x64",
-      "linuxmint.18.1",
-      "linuxmint.18-x64",
-      "linuxmint.18",
-      "ubuntu.16.04-x64",
-      "ubuntu.16.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.18.3-x64": [
-      "linuxmint.18.3",
-      "linuxmint.18.2-x64",
-      "linuxmint.18.2",
-      "linuxmint.18.1-x64",
-      "linuxmint.18.1",
-      "linuxmint.18-x64",
-      "linuxmint.18",
-      "ubuntu.16.04-x64",
-      "ubuntu.16.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.19-x64": [
-      "linuxmint.19",
-      "ubuntu.18.04-x64",
-      "ubuntu.18.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.19.1-x64": [
-      "linuxmint.19.1",
-      "linuxmint.19-x64",
-      "linuxmint.19",
-      "ubuntu.18.04-x64",
-      "ubuntu.18.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "linuxmint.19.2-x64": [
-      "linuxmint.19.2",
-      "linuxmint.19.1-x64",
-      "linuxmint.19.1",
-      "linuxmint.19-x64",
-      "linuxmint.19",
-      "ubuntu.18.04-x64",
-      "ubuntu.18.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol-x64": [
-      "ol",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7-x64": [
-      "ol.7",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.0-x64": [
-      "ol.7.0",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.1-x64": [
-      "ol.7.1",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.2-x64": [
-      "ol.7.2",
-      "ol.7.1-x64",
-      "rhel.7.2-x64",
-      "ol.7.1",
-      "rhel.7.2",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.3-x64": [
-      "ol.7.3",
-      "ol.7.2-x64",
-      "rhel.7.3-x64",
-      "ol.7.2",
-      "rhel.7.3",
-      "ol.7.1-x64",
-      "rhel.7.2-x64",
-      "ol.7.1",
-      "rhel.7.2",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.4-x64": [
-      "ol.7.4",
-      "ol.7.3-x64",
-      "rhel.7.4-x64",
-      "ol.7.3",
-      "rhel.7.4",
-      "ol.7.2-x64",
-      "rhel.7.3-x64",
-      "ol.7.2",
-      "rhel.7.3",
-      "ol.7.1-x64",
-      "rhel.7.2-x64",
-      "ol.7.1",
-      "rhel.7.2",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.5-x64": [
-      "ol.7.5",
-      "ol.7.4-x64",
-      "rhel.7.5-x64",
-      "ol.7.4",
-      "rhel.7.5",
-      "ol.7.3-x64",
-      "rhel.7.4-x64",
-      "ol.7.3",
-      "rhel.7.4",
-      "ol.7.2-x64",
-      "rhel.7.3-x64",
-      "ol.7.2",
-      "rhel.7.3",
-      "ol.7.1-x64",
-      "rhel.7.2-x64",
-      "ol.7.1",
-      "rhel.7.2",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.7.6-x64": [
-      "ol.7.6",
-      "ol.7.5-x64",
-      "rhel.7.6-x64",
-      "ol.7.5",
-      "rhel.7.6",
-      "ol.7.4-x64",
-      "rhel.7.5-x64",
-      "ol.7.4",
-      "rhel.7.5",
-      "ol.7.3-x64",
-      "rhel.7.4-x64",
-      "ol.7.3",
-      "rhel.7.4",
-      "ol.7.2-x64",
-      "rhel.7.3-x64",
-      "ol.7.2",
-      "rhel.7.3",
-      "ol.7.1-x64",
-      "rhel.7.2-x64",
-      "ol.7.1",
-      "rhel.7.2",
-      "ol.7.0-x64",
-      "rhel.7.1-x64",
-      "ol.7.0",
-      "rhel.7.1",
-      "ol.7-x64",
-      "rhel.7.0-x64",
-      "ol.7",
-      "rhel.7.0",
-      "ol-x64",
-      "rhel.7-x64",
-      "ol",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.8-x64": [
-      "ol.8",
-      "ol-x64",
-      "rhel.8-x64",
-      "ol",
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ol.8.0-x64": [
-      "ol.8.0",
-      "ol.8-x64",
-      "rhel.8.0-x64",
-      "ol.8",
-      "rhel.8.0",
-      "ol-x64",
-      "rhel.8-x64",
-      "ol",
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse-x64": [
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.13.2-x64": [
-      "opensuse.13.2",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.15.0-x64": [
-      "opensuse.15.0",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.15.1-x64": [
-      "opensuse.15.1",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.42.1-x64": [
-      "opensuse.42.1",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.42.2-x64": [
-      "opensuse.42.2",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "opensuse.42.3-x64": [
-      "opensuse.42.3",
-      "opensuse-x64",
-      "opensuse",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel-x64": [
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.6-x64": [
-      "rhel.6",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7-x64": [
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.0-x64": [
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.1-x64": [
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.2-x64": [
-      "rhel.7.2",
-      "rhel.7.1-x64",
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.3-x64": [
-      "rhel.7.3",
-      "rhel.7.2-x64",
-      "rhel.7.2",
-      "rhel.7.1-x64",
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.4-x64": [
-      "rhel.7.4",
-      "rhel.7.3-x64",
-      "rhel.7.3",
-      "rhel.7.2-x64",
-      "rhel.7.2",
-      "rhel.7.1-x64",
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.5-x64": [
-      "rhel.7.5",
-      "rhel.7.4-x64",
-      "rhel.7.4",
-      "rhel.7.3-x64",
-      "rhel.7.3",
-      "rhel.7.2-x64",
-      "rhel.7.2",
-      "rhel.7.1-x64",
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.7.6-x64": [
-      "rhel.7.6",
-      "rhel.7.5-x64",
-      "rhel.7.5",
-      "rhel.7.4-x64",
-      "rhel.7.4",
-      "rhel.7.3-x64",
-      "rhel.7.3",
-      "rhel.7.2-x64",
-      "rhel.7.2",
-      "rhel.7.1-x64",
-      "rhel.7.1",
-      "rhel.7.0-x64",
-      "rhel.7.0",
-      "rhel.7-x64",
-      "rhel.7",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.8-x64": [
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.8.0-x64": [
-      "rhel.8.0",
-      "rhel.8-x64",
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "rhel.8.1-x64": [
-      "rhel.8.1",
-      "rhel.8.0-x64",
-      "rhel.8.0",
-      "rhel.8-x64",
-      "rhel.8",
-      "rhel-x64",
-      "rhel",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles-x64": [
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.12-x64": [
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.12.1-x64": [
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.12.2-x64": [
-      "sles.12.2",
-      "sles.12.1-x64",
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.12.3-x64": [
-      "sles.12.3",
-      "sles.12.2-x64",
-      "sles.12.2",
-      "sles.12.1-x64",
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.12.4-x64": [
-      "sles.12.4",
-      "sles.12.3-x64",
-      "sles.12.3",
-      "sles.12.2-x64",
-      "sles.12.2",
-      "sles.12.1-x64",
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.15-x64": [
-      "sles.15",
-      "sles.12.4-x64",
-      "sles.12.4",
-      "sles.12.3-x64",
-      "sles.12.3",
-      "sles.12.2-x64",
-      "sles.12.2",
-      "sles.12.1-x64",
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "sles.15.1-x64": [
-      "sles.15.1",
-      "sles.15-x64",
-      "sles.15",
-      "sles.12.4-x64",
-      "sles.12.4",
-      "sles.12.3-x64",
-      "sles.12.3",
-      "sles.12.2-x64",
-      "sles.12.2",
-      "sles.12.1-x64",
-      "sles.12.1",
-      "sles.12-x64",
-      "sles.12",
-      "sles-x64",
-      "sles",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu-x64": [
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.14.04-x64": [
-      "ubuntu.14.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.14.10-x64": [
-      "ubuntu.14.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.15.04-x64": [
-      "ubuntu.15.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.15.10-x64": [
-      "ubuntu.15.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.16.04-x64": [
-      "ubuntu.16.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.16.10-x64": [
-      "ubuntu.16.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.17.04-x64": [
-      "ubuntu.17.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.17.10-x64": [
-      "ubuntu.17.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.18.04-x64": [
-      "ubuntu.18.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.18.10-x64": [
-      "ubuntu.18.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.19.04-x64": [
-      "ubuntu.19.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.19.10-x64": [
-      "ubuntu.19.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.20.04-x64": [
-      "ubuntu.20.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.20.10-x64": [
-      "ubuntu.20.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.21.04-x64": [
-      "ubuntu.21.04",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ],
-    "ubuntu.21.10-x64": [
-      "ubuntu.21.10",
-      "ubuntu-x64",
-      "ubuntu",
-      "debian-x64",
-      "debian",
-      "linux-x64",
-      "linux",
-      "unix-x64",
-      "unix",
-      "any",
-      "base"
-    ]
   }
 }
