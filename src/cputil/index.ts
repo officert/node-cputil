@@ -3,6 +3,8 @@ import * as path from 'path'
 import * as child_process from 'child_process'
 import { v4 as uuidv4 } from 'uuid'
 
+console.log('**PRINTER - PLATFORM**', process.platform)
+
 const CPUTIL_PATH =
   process.platform === 'darwin'
     ? path.join(__dirname, './bin/macos/cputil')
