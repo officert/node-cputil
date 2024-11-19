@@ -1,6 +1,6 @@
 {
-  "name": "node-cputil",
-  "version": "0.7.0",
+  "name": "node-cputil-2",
+  "version": "0.1.0",
   "description": "Node js wrapper for Star's cputil",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
