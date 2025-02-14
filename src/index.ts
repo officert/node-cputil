@@ -151,5 +151,3 @@ function asyncExec(cmd: string, args?: string[]) {
     })
   })
 }
-
-module.exports = asyncExec
