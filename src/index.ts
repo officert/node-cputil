@@ -39,7 +39,7 @@ export const convertStarPrintMarkUp = async ({
   const fileName = `html-${uuidv4()}.stm`
   const tmpFilePath =  path.join(os.tmpdir(), fileName)
   //  path.join(__dirname, `./tmp/${fileName}`)
-  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
+  // const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
   const outputFormat = contentType ?? StarContentType.STAR_VND_PRNT
 
@@ -55,9 +55,9 @@ export const convertStarPrintMarkUp = async ({
   await writeFile(tmpFilePath, text)
 
   const prntCommandData = await asyncExec(CPUTIL_PATH, [
-    printerType,
     'decode',
-    'scale-to-fit',
+    printerType,
+    // 'scale-to-fit',
     outputFormat,
     tmpFilePath,
     '-'
@@ -70,17 +70,17 @@ export const convertStarPrintMarkUp = async ({
   return prntCommandData
 }
 
-async function readFile(filename: string) {
-  if (!filename) throw new Error('filename')
+// async function readFile(filename: string) {
+//   if (!filename) throw new Error('filename')
 
-  return new Promise((resolve, reject) => {
-    fs.readFile(filename, (err, result) => {
-      if (err) return reject(err)
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(filename, (err, result) => {
+//       if (err) return reject(err)
 
-      return resolve(result)
-    })
-  })
-}
+//       return resolve(result)
+//     })
+//   })
+// }
 
 async function writeFile(filename: string, data: string) {
   return new Promise((resolve, reject) => {
@@ -88,6 +88,7 @@ async function writeFile(filename: string, data: string) {
       filename,
       data,
       {
+        flag: 'w+',
         encoding: 'utf-8',
       },
       (err: any) => {
@@ -139,7 +140,7 @@ function checkIfDirAlreadyExists(path: string) {
   })
 }
 
-function asyncExec(cmd: string, args?: string[]) {
+function asyncExec(cmd: string, args?: string[]) : Promise<string> {
   return new Promise((resolve, reject) => {
     const process = child_process.spawn(cmd, args)
     const stdout: any[] = []
@@ -152,7 +153,7 @@ function asyncExec(cmd: string, args?: string[]) {
     })
 
     process.on('close', () => {
-      resolve(Buffer.concat(stdout))
+      resolve(Buffer.concat(stdout).toString())
     })
   })
 }

@@ -64,7 +64,7 @@ var StarContentType;
 var convertStarPrintMarkUp = function (_a) {
     var text = _a.text, printerType = _a.printerType, contentType = _a.contentType;
     return __awaiter(void 0, void 0, void 0, function () {
-        var fileName, tmpFilePath, outputFilePath, outputFormat, prntCommandData;
+        var fileName, tmpFilePath, outputFormat, prntCommandData;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -72,7 +72,6 @@ var convertStarPrintMarkUp = function (_a) {
                         return [2 /*return*/, Promise.reject(new Error('text'))];
                     fileName = "html-".concat((0, uuid_1.v4)(), ".stm");
                     tmpFilePath = path.join(os.tmpdir(), fileName);
-                    outputFilePath = path.join(__dirname, "./output/".concat(fileName.replace('.stm', '.bin')));
                     outputFormat = contentType !== null && contentType !== void 0 ? contentType : StarContentType.STAR_VND_PRNT;
                     printerType = printerType !== null && printerType !== void 0 ? printerType : StarPrinterType.THERMAL_3;
                     // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
@@ -87,9 +86,9 @@ var convertStarPrintMarkUp = function (_a) {
                 case 2:
                     _b.sent();
                     return [4 /*yield*/, asyncExec(CPUTIL_PATH, [
-                            printerType,
                             'decode',
-                            'scale-to-fit',
+                            printerType,
+                            // 'scale-to-fit',
                             outputFormat,
                             tmpFilePath,
                             '-'
@@ -109,26 +108,21 @@ var convertStarPrintMarkUp = function (_a) {
     });
 };
 exports.convertStarPrintMarkUp = convertStarPrintMarkUp;
-function readFile(filename) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            if (!filename)
-                throw new Error('filename');
-            return [2 /*return*/, new Promise(function (resolve, reject) {
-                    fs.readFile(filename, function (err, result) {
-                        if (err)
-                            return reject(err);
-                        return resolve(result);
-                    });
-                })];
-        });
-    });
-}
+// async function readFile(filename: string) {
+//   if (!filename) throw new Error('filename')
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(filename, (err, result) => {
+//       if (err) return reject(err)
+//       return resolve(result)
+//     })
+//   })
+// }
 function writeFile(filename, data) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             return [2 /*return*/, new Promise(function (resolve, reject) {
                     fs.writeFile(filename, data, {
+                        flag: 'w+',
                         encoding: 'utf-8',
                     }, function (err) {
                         if (err)
@@ -185,7 +179,7 @@ function asyncExec(cmd, args) {
             reject(e);
         });
         process.on('close', function () {
-            resolve(Buffer.concat(stdout));
+            resolve(Buffer.concat(stdout).toString());
         });
     });
 }
