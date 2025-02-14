@@ -1,6 +1,6 @@
 {
   "name": "node-cputil-2",
-  "version": "0.2.75",
+  "version": "0.2.76",
   "author": "officert",
   "description": "Node js wrapper for Star's cputil",
   "main": "dist/index.js",

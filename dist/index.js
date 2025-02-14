@@ -41,7 +41,6 @@ var fs = require("fs");
 var path = require("path");
 var child_process = require("child_process");
 var uuid_1 = require("uuid");
-var os = require("os");
 var CPUTIL_PATH = process.platform === 'darwin'
     ? path.join(__dirname, './bin/macos/cputil')
     : path.join(__dirname, './bin/linux/cputil');
@@ -64,45 +63,57 @@ var StarContentType;
 var convertStarPrintMarkUp = function (_a) {
     var text = _a.text, printerType = _a.printerType, contentType = _a.contentType;
     return __awaiter(void 0, void 0, void 0, function () {
-        var fileName, tmpFilePath, outputFormat, prntCommandData;
+        var fileName, tmpFilePath, outputFormat, result;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     if (!text)
                         return [2 /*return*/, Promise.reject(new Error('text'))];
                     fileName = "html-".concat((0, uuid_1.v4)(), ".stm");
-                    tmpFilePath = path.join(os.tmpdir(), fileName);
+                    tmpFilePath = path.join(__dirname, "./tmp/".concat(fileName));
                     outputFormat = contentType !== null && contentType !== void 0 ? contentType : StarContentType.STAR_VND_PRNT;
                     printerType = printerType !== null && printerType !== void 0 ? printerType : StarPrinterType.THERMAL_3;
                     // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
                     return [4 /*yield*/, Promise.all([
                             makeDir(path.join(__dirname, './tmp')),
-                            makeDir(path.join(__dirname, './output')),
+                            // makeDir(path.join(__dirname, './output')),
                         ])];
                 case 1:
                     // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
                     _b.sent();
-                    return [4 /*yield*/, writeFile(tmpFilePath, text)];
+                    return [4 /*yield*/, writeFile(tmpFilePath, text)
+                        // console.log('PRINTER ARGS', [
+                        //   'decode',
+                        //   printerType,
+                        //   'scale-to-fit',
+                        //   outputFormat,
+                        //   tmpFilePath,
+                        //   outputFilePath,
+                        // ])
+                    ];
                 case 2:
                     _b.sent();
                     return [4 /*yield*/, asyncExec(CPUTIL_PATH, [
-                            'decode',
                             printerType,
-                            // 'scale-to-fit',
+                            'scale-to-fit',
+                            'decode',
                             outputFormat,
                             tmpFilePath,
-                            '-'
+                            '-',
                         ])
+                        // console.log('RESULT', result)
                         // const fileBuffer = (await readFile(outputFilePath)) as any
                     ];
                 case 3:
-                    prntCommandData = _b.sent();
+                    result = _b.sent();
+                    // console.log('RESULT', result)
                     // const fileBuffer = (await readFile(outputFilePath)) as any
                     return [4 /*yield*/, deleteFile(tmpFilePath)];
                 case 4:
+                    // console.log('RESULT', result)
                     // const fileBuffer = (await readFile(outputFilePath)) as any
                     _b.sent();
-                    return [2 /*return*/, prntCommandData];
+                    return [2 /*return*/, result];
             }
         });
     });

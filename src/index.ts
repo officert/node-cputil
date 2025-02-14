@@ -2,7 +2,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
 import { v4 as uuidv4 } from 'uuid'
-import * as os from 'os'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -37,9 +36,11 @@ export const convertStarPrintMarkUp = async ({
   if (!text) return Promise.reject(new Error('text'))
 
   const fileName = `html-${uuidv4()}.stm`
-  const tmpFilePath =  path.join(os.tmpdir(), fileName)
-  //  path.join(__dirname, `./tmp/${fileName}`)
-  // const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
+  const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
+  // const outputFilePath = path.join(
+  //   __dirname,
+  //   `./output/${fileName.replace('.stm', '.bin')}`
+  // )
 
   const outputFormat = contentType ?? StarContentType.STAR_VND_PRNT
 
@@ -49,25 +50,36 @@ export const convertStarPrintMarkUp = async ({
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
-    makeDir(path.join(__dirname, './output')),
+    // makeDir(path.join(__dirname, './output')),
   ])
 
   await writeFile(tmpFilePath, text)
 
-  const prntCommandData = await asyncExec(CPUTIL_PATH, [
-    'decode',
+  // console.log('PRINTER ARGS', [
+  //   'decode',
+  //   printerType,
+  //   'scale-to-fit',
+  //   outputFormat,
+  //   tmpFilePath,
+  //   outputFilePath,
+  // ])
+
+  const result = await asyncExec(CPUTIL_PATH, [
     printerType,
-    // 'scale-to-fit',
+    'scale-to-fit',
+    'decode',
     outputFormat,
     tmpFilePath,
-    '-'
+    '-',
   ])
+
+  // console.log('RESULT', result)
 
   // const fileBuffer = (await readFile(outputFilePath)) as any
 
   await deleteFile(tmpFilePath)
 
-  return prntCommandData
+  return result
 }
 
 // async function readFile(filename: string) {
@@ -140,7 +152,7 @@ function checkIfDirAlreadyExists(path: string) {
   })
 }
 
-function asyncExec(cmd: string, args?: string[]) : Promise<string> {
+function asyncExec(cmd: string, args?: string[]): Promise<string> {
   return new Promise((resolve, reject) => {
     const process = child_process.spawn(cmd, args)
     const stdout: any[] = []
