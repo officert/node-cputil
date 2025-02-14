@@ -65,7 +65,7 @@ export const convertStarPrintMarkUp = async ({
 
   // const fileBuffer = (await readFile(outputFilePath)) as any
 
-  await Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])
+  await deleteFile(tmpFilePath)
 
   return prntCommandData
 }

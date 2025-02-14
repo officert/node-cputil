@@ -99,7 +99,7 @@ var convertStarPrintMarkUp = function (_a) {
                 case 3:
                     prntCommandData = _b.sent();
                     // const fileBuffer = (await readFile(outputFilePath)) as any
-                    return [4 /*yield*/, Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])];
+                    return [4 /*yield*/, deleteFile(tmpFilePath)];
                 case 4:
                     // const fileBuffer = (await readFile(outputFilePath)) as any
                     _b.sent();
