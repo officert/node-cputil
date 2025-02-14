@@ -1,6 +1,6 @@
 {
   "name": "node-cputil-2",
-  "version": "0.2.71",
+  "version": "0.2.72",
   "author": "officert",
   "description": "Node js wrapper for Star's cputil",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc",
+    "build": "tsc && copyfiles \"./src/bin/linux/*\" dist/bin/linux -f && copyfiles \"./src/bin/macos/*\" dist/bin/macos -f",
     "test": "echo 'no-op'"
   },
   "repository": {

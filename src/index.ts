@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from 'uuid'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
-    ? path.join(__dirname, '../../bin/macos/cputil')
-    : path.join(__dirname, '../../bin/linux/cputil')
+    ? path.join(__dirname, './bin/macos/cputil')
+    : path.join(__dirname, './bin/linux/cputil')
 
 export enum StarPrinterType {
   THERMAL_2 = 'thermal2',
