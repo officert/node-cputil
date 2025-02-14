@@ -63,7 +63,7 @@ var StarContentType;
 var convertStarPrintMarkUp = function (_a) {
     var text = _a.text, printerType = _a.printerType, contentType = _a.contentType;
     return __awaiter(void 0, void 0, void 0, function () {
-        var fileName, tmpFilePath, outputFilePath, outputFormat, cmd, fileBuffer;
+        var fileName, tmpFilePath, outputFilePath, outputFormat, fileBuffer;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -74,17 +74,25 @@ var convertStarPrintMarkUp = function (_a) {
                     outputFilePath = path.join(__dirname, "./output/".concat(fileName.replace('.stm', '.bin')));
                     outputFormat = contentType !== null && contentType !== void 0 ? contentType : StarContentType.STAR_VND_PRNT;
                     printerType = printerType !== null && printerType !== void 0 ? printerType : StarPrinterType.THERMAL_3;
-                    cmd = "".concat(CPUTIL_PATH, " ").concat(printerType, " scale-to-fit decode ").concat(outputFormat, " ").concat(tmpFilePath, " ").concat(outputFilePath);
+                    // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
                     return [4 /*yield*/, Promise.all([
                             makeDir(path.join(__dirname, './tmp')),
                             makeDir(path.join(__dirname, './output')),
                         ])];
                 case 1:
+                    // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
                     _b.sent();
                     return [4 /*yield*/, writeFile(tmpFilePath, text)];
                 case 2:
                     _b.sent();
-                    return [4 /*yield*/, execCputil(cmd)];
+                    return [4 /*yield*/, asyncExec(CPUTIL_PATH, [
+                            printerType,
+                            'scale-to-fit',
+                            'decode',
+                            outputFormat,
+                            tmpFilePath,
+                            outputFilePath,
+                        ])];
                 case 3:
                     _b.sent();
                     return [4 /*yield*/, readFile(outputFilePath)];
@@ -138,13 +146,6 @@ function deleteFile(filename) {
         });
     });
 }
-function execCputil(command) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/, asyncExec(command)];
-        });
-    });
-}
 function makeDir(path) {
     return checkIfDirAlreadyExists(path).then(function (exists) {
         if (!exists)
@@ -186,4 +187,3 @@ function asyncExec(cmd, args) {
         });
     });
 }
-module.exports = asyncExec;

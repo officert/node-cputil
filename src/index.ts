@@ -43,7 +43,7 @@ export const convertStarPrintMarkUp = async ({
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
-  const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
+  // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} ${outputFilePath}`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
@@ -52,7 +52,14 @@ export const convertStarPrintMarkUp = async ({
 
   await writeFile(tmpFilePath, text)
 
-  await execCputil(cmd)
+  await asyncExec(CPUTIL_PATH, [
+    printerType,
+    'scale-to-fit',
+    'decode',
+    outputFormat,
+    tmpFilePath,
+    outputFilePath,
+  ])
 
   const fileBuffer = (await readFile(outputFilePath)) as any
 
@@ -98,10 +105,6 @@ function deleteFile(filename: string) {
       return resolve(null)
     })
   })
-}
-
-async function execCputil(command: string) {
-  return asyncExec(command)
 }
 
 function makeDir(path: string) {
