@@ -3,8 +3,6 @@ import * as path from 'path'
 import * as child_process from 'child_process'
 import { v4 as uuidv4 } from 'uuid'
 
-console.log('**PRINTER - PLATFORM**', process.platform)
-
 const CPUTIL_PATH =
   process.platform === 'darwin'
     ? path.join(__dirname, './bin/macos/cputil')
@@ -103,21 +101,7 @@ function deleteFile(filename: string) {
 }
 
 async function execCputil(command: string) {
-  console.log('CPUTIL COMMAND', command)
-
-  return new Promise((resolve, reject) => {
-    child_process.exec(command, (error?: any, stdout?: any, stderr?: any) => {
-      if (error) {
-        return reject(error)
-      }
-
-      if (stderr) {
-        return resolve(stderr)
-      }
-
-      return resolve(stdout)
-    })
-  })
+  return asyncExec(command)
 }
 
 function makeDir(path: string) {
@@ -149,3 +133,23 @@ function checkIfDirAlreadyExists(path: string) {
     })
   })
 }
+
+function asyncExec(cmd: string, args?: string[]) {
+  return new Promise((resolve, reject) => {
+    const process = child_process.spawn(cmd, args)
+    const stdout: any[] = []
+    process.stdout.on('data', (data) => {
+      stdout.push(data)
+    })
+
+    process.on('error', (e) => {
+      reject(e)
+    })
+
+    process.on('close', () => {
+      resolve(Buffer.concat(stdout))
+    })
+  })
+}
+
+module.exports = asyncExec
