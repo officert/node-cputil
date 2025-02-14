@@ -41,6 +41,7 @@ var fs = require("fs");
 var path = require("path");
 var child_process = require("child_process");
 var uuid_1 = require("uuid");
+var os = require("os");
 var CPUTIL_PATH = process.platform === 'darwin'
     ? path.join(__dirname, './bin/macos/cputil')
     : path.join(__dirname, './bin/linux/cputil');
@@ -63,14 +64,14 @@ var StarContentType;
 var convertStarPrintMarkUp = function (_a) {
     var text = _a.text, printerType = _a.printerType, contentType = _a.contentType;
     return __awaiter(void 0, void 0, void 0, function () {
-        var fileName, tmpFilePath, outputFilePath, outputFormat, fileBuffer;
+        var fileName, tmpFilePath, outputFilePath, outputFormat, prntCommandData;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     if (!text)
                         return [2 /*return*/, Promise.reject(new Error('text'))];
                     fileName = "html-".concat((0, uuid_1.v4)(), ".stm");
-                    tmpFilePath = path.join(__dirname, "./tmp/".concat(fileName));
+                    tmpFilePath = path.join(os.tmpdir(), fileName);
                     outputFilePath = path.join(__dirname, "./output/".concat(fileName.replace('.stm', '.bin')));
                     outputFormat = contentType !== null && contentType !== void 0 ? contentType : StarContentType.STAR_VND_PRNT;
                     printerType = printerType !== null && printerType !== void 0 ? printerType : StarPrinterType.THERMAL_3;
@@ -87,21 +88,22 @@ var convertStarPrintMarkUp = function (_a) {
                     _b.sent();
                     return [4 /*yield*/, asyncExec(CPUTIL_PATH, [
                             printerType,
-                            'scale-to-fit',
                             'decode',
+                            'scale-to-fit',
                             outputFormat,
                             tmpFilePath,
-                            outputFilePath,
-                        ])];
+                            '-'
+                        ])
+                        // const fileBuffer = (await readFile(outputFilePath)) as any
+                    ];
                 case 3:
-                    _b.sent();
-                    return [4 /*yield*/, readFile(outputFilePath)];
-                case 4:
-                    fileBuffer = (_b.sent());
+                    prntCommandData = _b.sent();
+                    // const fileBuffer = (await readFile(outputFilePath)) as any
                     return [4 /*yield*/, Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])];
-                case 5:
+                case 4:
+                    // const fileBuffer = (await readFile(outputFilePath)) as any
                     _b.sent();
-                    return [2 /*return*/, fileBuffer];
+                    return [2 /*return*/, prntCommandData];
             }
         });
     });
@@ -111,7 +113,7 @@ function readFile(filename) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             if (!filename)
-                return [2 /*return*/, Promise.reject(new Error('filename'))];
+                throw new Error('filename');
             return [2 /*return*/, new Promise(function (resolve, reject) {
                     fs.readFile(filename, function (err, result) {
                         if (err)

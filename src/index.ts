@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as child_process from 'child_process'
 import { v4 as uuidv4 } from 'uuid'
+import * as os from 'os'
 
 const CPUTIL_PATH =
   process.platform === 'darwin'
@@ -36,7 +37,8 @@ export const convertStarPrintMarkUp = async ({
   if (!text) return Promise.reject(new Error('text'))
 
   const fileName = `html-${uuidv4()}.stm`
-  const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
+  const tmpFilePath =  path.join(os.tmpdir(), fileName)
+  //  path.join(__dirname, `./tmp/${fileName}`)
   const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
 
   const outputFormat = contentType ?? StarContentType.STAR_VND_PRNT
@@ -52,24 +54,24 @@ export const convertStarPrintMarkUp = async ({
 
   await writeFile(tmpFilePath, text)
 
-  await asyncExec(CPUTIL_PATH, [
+  const prntCommandData = await asyncExec(CPUTIL_PATH, [
     printerType,
-    'scale-to-fit',
     'decode',
+    'scale-to-fit',
     outputFormat,
     tmpFilePath,
-    outputFilePath,
+    '-'
   ])
 
-  const fileBuffer = (await readFile(outputFilePath)) as any
+  // const fileBuffer = (await readFile(outputFilePath)) as any
 
   await Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])
 
-  return fileBuffer
+  return prntCommandData
 }
 
 async function readFile(filename: string) {
-  if (!filename) return Promise.reject(new Error('filename'))
+  if (!filename) throw new Error('filename')
 
   return new Promise((resolve, reject) => {
     fs.readFile(filename, (err, result) => {
