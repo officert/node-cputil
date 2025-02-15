@@ -1,18 +1,19 @@
 {
   "name": "node-cputil-2",
-  "version": "0.2.76",
+  "version": "0.2.8",
   "author": "officert",
   "description": "Node js wrapper for Star's cputil",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist/**/*",
-    "bin/**/*"
+    "lib/**/*"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "tsc && copyfiles \"./src/bin/linux/*\" dist/bin/linux -f && copyfiles \"./src/bin/macos/*\" dist/bin/macos -f",
-    "test": "echo 'no-op'"
+    "clean": "rm -rf lib",
+    "build": "tsc",
+    "test": "echo 'no-op'",
+    "eslint": "tslint -p tsconfig.json",
+    "publish-np": "np patch --no-2fa"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,9 @@
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "np": "^7.6.0",
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.5.3"
   },

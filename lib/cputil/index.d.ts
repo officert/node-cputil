@@ -16,4 +16,4 @@ export declare const convertStarPrintMarkUp: ({ text, printerType, contentType, 
     text: string;
     printerType?: StarPrinterType | undefined;
     contentType?: StarContentType | undefined;
-}) => Promise<string>;
+}) => Promise<any>;
