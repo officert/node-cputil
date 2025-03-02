@@ -59,8 +59,7 @@ export const convertStarPrintMarkUp = async ({
 
   // await execCputil(cmd)
 
-  console.log('CPUTIL CMD', 'sudo', [
-    CPUTIL_PATH,
+  console.log('CPUTIL CMD', CPUTIL_PATH, [
     'decode',
     'scale-to-fit',
     printerType,
@@ -69,8 +68,7 @@ export const convertStarPrintMarkUp = async ({
     '[stdout]',
   ])
 
-  const results = await asyncExec('sudo', [
-    CPUTIL_PATH,
+  const results = await asyncExec(CPUTIL_PATH, [
     'decode',
     'scale-to-fit',
     printerType,
