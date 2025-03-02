@@ -52,26 +52,28 @@ export const convertStarPrintMarkUp = async ({
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
-    makeDir(path.join(__dirname, './output')),
+    // makeDir(path.join(__dirname, './output')),
   ])
 
   await writeFile(tmpFilePath, text)
 
   // await execCputil(cmd)
 
-  console.log('CPUTIL CMD', CPUTIL_PATH, [
-    printerType,
-    'scale-to-fit',
+  console.log('CPUTIL CMD', 'sudo', [
+    CPUTIL_PATH,
     'decode',
+    'scale-to-fit',
+    printerType,
     outputFormat,
     tmpFilePath,
     '[stdout]',
   ])
 
-  const results = await asyncExec(CPUTIL_PATH, [
-    printerType,
-    'scale-to-fit',
+  const results = await asyncExec('sudo', [
+    CPUTIL_PATH,
     'decode',
+    'scale-to-fit',
+    printerType,
     outputFormat,
     tmpFilePath,
     '[stdout]',
@@ -93,19 +95,19 @@ export const convertStarPrintMarkUp = async ({
   return results
 }
 
-async function readFile(filename: string) {
-  if (!filename) return Promise.reject(new Error('filename'))
+// async function readFile(filename: string) {
+//   if (!filename) return Promise.reject(new Error('filename'))
 
-  return new Promise((resolve, reject) => {
-    fs.readFile(filename, (err, result) => {
-      if (err) return reject(err)
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(filename, (err, result) => {
+//       if (err) return reject(err)
 
-      return resolve(result)
-    })
-  })
-}
+//       return resolve(result)
+//     })
+//   })
+// }
 
-function asyncExec(cmd: string, args?: string[]) {
+async function asyncExec(cmd: string, args?: string[]) {
   return new Promise((resolve, reject) => {
     const process = child_process.spawn(cmd, args, {
       env: {
@@ -146,7 +148,7 @@ async function writeFile(filename: string, data: string) {
   })
 }
 
-function deleteFile(filename: string) {
+async function deleteFile(filename: string) {
   return new Promise((resolve, reject) => {
     fs.unlink(filename, (err: any) => {
       if (err) return reject(err)
@@ -172,13 +174,13 @@ function deleteFile(filename: string) {
 //   })
 // }
 
-function makeDir(path: string) {
-  return checkIfDirAlreadyExists(path).then((exists) => {
-    if (!exists) return createDir(path)
-  })
+async function makeDir(path: string) {
+  const exists = await checkIfDirAlreadyExists(path)
+
+  if (!exists) return createDir(path)
 }
 
-function createDir(path: string) {
+async function createDir(path: string) {
   return new Promise((resolve, reject) => {
     fs.mkdir(path, (err) => {
       if (err) {
@@ -190,7 +192,7 @@ function createDir(path: string) {
   })
 }
 
-function checkIfDirAlreadyExists(path: string) {
+async function checkIfDirAlreadyExists(path: string) {
   return new Promise((resolve) => {
     fs.access(path, (error) => {
       if (error) {
