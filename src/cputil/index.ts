@@ -123,7 +123,7 @@ function asyncExec(cmd: string, args?: string[]) {
     })
 
     process.on('close', () => {
-      resolve(Buffer.concat(stdout).toString('base64'))
+      resolve(Buffer.concat(stdout))
     })
   })
 }
