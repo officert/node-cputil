@@ -39,7 +39,10 @@ export const convertStarPrintMarkUp = async ({
 
   const fileName = `html-${uuidv4()}.stm`
   const tmpFilePath = path.join(__dirname, `./tmp/${fileName}`)
-  const outputFilePath = path.join(__dirname, `./output/${fileName.replace('.stm', '.bin')}`)
+  const outputFilePath = path.join(
+    __dirname,
+    `./output/${fileName.replace('.stm', '.bin')}`
+  )
 
   const outputFormat = contentType ?? StarContentType.STAR_VND_PRNT
 

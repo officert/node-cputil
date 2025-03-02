@@ -1,0 +1,91 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
+  "files": {
+    "ignore": ["dist/*"]
+  },
+  "organizeImports": {
+    "enabled": false
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noThisInStatic": "off",
+        "noStaticOnlyClass": "off",
+        "useArrowFunction": "off",
+        "noForEach": "off",
+        "useOptionalChain": "off",
+        "noExtraBooleanCast": "off",
+        "noUselessConstructor": "off",
+        "noUselessTernary": "off",
+        "noUselessThisAlias": "off",
+        "noExcessiveNestedTestSuites": "off",
+        "useLiteralKeys": "off",
+        "noBannedTypes": "off",
+        "useFlatMap": "off"
+      },
+      "correctness": {
+        "noInnerDeclarations": "off",
+        "noSwitchDeclarations": "off",
+        "noSelfAssign": "off",
+        "noEmptyPattern": "off",
+        "noVoidTypeReturn": "off",
+        "noFlatMapIdentity": "off"
+      },
+      "performance": {
+        "noDelete": "off",
+        "noAccumulatingSpread": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useImportType": "off",
+        "noUnusedTemplateLiteral": "off",
+        "useConst": "off",
+        "noArguments": "off",
+        "noParameterAssign": "off",
+        "useNodejsImportProtocol": "off",
+        "noUselessElse": "off",
+        "noVar": "off",
+        "useNumberNamespace": "off",
+        "useSingleVarDeclarator": "off",
+        "useTemplate": "off",
+        "useDefaultParameterLast": "off",
+        "useExponentiationOperator": "off",
+        "useShorthandFunctionType": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noShadowRestrictedNames": "off",
+        "noRedundantUseStrict": "off",
+        "noGlobalAssign": "off",
+        "noAssignInExpressions": "off",
+        "useIsArray": "off",
+        "noGlobalIsNan": "off",
+        "noThenProperty": "off",
+        "noDuplicateTestHooks": "off",
+        "noPrototypeBuiltins": "off",
+        "noImplicitAnyLet": "off",
+        "noControlCharactersInRegex": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "indentWidth": 2,
+      "semicolons": "asNeeded",
+      "quoteStyle": "single",
+      "trailingCommas": "es5"
+    }
+  },
+  "vcs": {
+    "defaultBranch": "origin/dev"
+  }
+}
