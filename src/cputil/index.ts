@@ -48,11 +48,11 @@ export const convertStarPrintMarkUp = async ({
 
   printerType = printerType ?? StarPrinterType.THERMAL_3
 
-  // const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} [stdout]`
+  const cmd = `${CPUTIL_PATH} ${printerType} scale-to-fit decode ${outputFormat} ${tmpFilePath} [stdout]`
 
   await Promise.all([
     makeDir(path.join(__dirname, './tmp')),
-    // makeDir(path.join(__dirname, './output')),
+    makeDir(path.join(__dirname, './output')),
   ])
 
   await writeFile(tmpFilePath, text)
@@ -65,27 +65,21 @@ export const convertStarPrintMarkUp = async ({
     printerType,
     outputFormat,
     tmpFilePath,
-    '[stdout]',
-  ])
-
-  await asyncExec(CPUTIL_PATH, [
-    'decode',
-    'scale-to-fit',
-    printerType,
-    outputFormat,
-    tmpFilePath,
     outputFilePath,
   ])
+
+  await asyncExec(cmd, {
+    env: {
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: 'false',
+    },
+  })
 
   // console.log('CPUTIL RESULTS', results)
 
   const results = (await readFile(outputFilePath)) as any
 
   try {
-    await Promise.all([
-      deleteFile(tmpFilePath),
-      //deleteFile(outputFilePath)
-    ])
+    await Promise.all([deleteFile(tmpFilePath), deleteFile(outputFilePath)])
   } catch (error) {
     console.log('Error deleting files', error)
   }
@@ -105,27 +99,44 @@ async function readFile(filename: string) {
   })
 }
 
-async function asyncExec(cmd: string, args?: string[]) {
+async function asyncExec(cmd: string, options: object) {
   return new Promise((resolve, reject) => {
-    const process = child_process.spawn(cmd, args, {
-      env: {
-        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: 'false',
-      },
-    })
-    const stdout: any[] = []
+    child_process.exec(
+      cmd,
+      options,
+      (error?: any, stdout?: any, stderr?: any) => {
+        if (error) {
+          return reject(error)
+        }
 
-    process.stdout.on('data', (data) => {
-      stdout.push(data)
-    })
+        if (stderr) {
+          return resolve(stderr)
+        }
 
-    process.on('error', (e) => {
-      reject(e)
-    })
-
-    process.on('close', () => {
-      resolve(Buffer.concat(stdout))
-    })
+        return resolve(stdout)
+      }
+    )
   })
+  // return new Promise((resolve, reject) => {
+  //   const process = child_process.spawn(cmd, args, {
+  //     env: {
+  //       DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: 'false',
+  //     },
+  //   })
+  //   const stdout: any[] = []
+
+  //   process.stdout.on('data', (data) => {
+  //     stdout.push(data)
+  //   })
+
+  //   process.on('error', (e) => {
+  //     reject(e)
+  //   })
+
+  //   process.on('close', () => {
+  //     resolve(Buffer.concat(stdout))
+  //   })
+  // })
 }
 
 async function writeFile(filename: string, data: string) {
