@@ -98,7 +98,11 @@ async function readFile(filename: string) {
 
 function asyncExec(cmd: string, args?: string[]) {
   return new Promise((resolve, reject) => {
-    const process = child_process.spawn(cmd, args)
+    const process = child_process.spawn(cmd, args, {
+      env: {
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: 'false',
+      },
+    })
     const stdout: any[] = []
 
     process.stdout.on('data', (data) => {
