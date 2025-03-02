@@ -1,6 +1,6 @@
 {
   "name": "node-cputil-2",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "officert",
   "description": "Node js wrapper for Star's cputil",
   "main": "lib/index.js",
@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "tsc",
+    "build": "tsc && pnpm copyfiles",
+    "copyfiles": "copyfiles -u 1 src/cputil/bin/linux/* lib && copyfiles -u 1 src/cputil/bin/macos/* lib",
     "test": "echo 'no-op'",
     "lint": "biome lint && pnpm typecheck",
     "lint:fix": "biome lint --write && pnpm typecheck",

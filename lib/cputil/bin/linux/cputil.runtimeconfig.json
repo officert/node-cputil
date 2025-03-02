@@ -8,7 +8,7 @@
       }
     ],
     "configProperties": {
-      "System.Globalization.Invariant": true
+      "System.Globalization.Invariant": false
     }
   }
 }
